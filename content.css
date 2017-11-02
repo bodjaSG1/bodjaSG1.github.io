@@ -1,0 +1,272 @@
+.container{
+    display:  flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content{
+    flex: 19;
+}
+
+.menu{
+    flex: 1;
+    background-image: linear-gradient(to top, #0e4675 62%, #d8262e 100%);
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    margin-bottom: -2000px;
+    padding-bottom: 2000px;
+}
+
+
+.menu a{
+    margin-top: 30px;
+    opacity: 0.6;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "PF Beau Sans Pro";
+    font-size: 20px;
+}
+
+.services{
+    margin-bottom: 10px; 
+}
+
+.social-network-1{
+    margin-top: 55px; 
+}
+.anna{
+    display: flex;
+}
+
+.foto{
+    width: 50%;
+}
+
+.foto-img{
+    height: auto;
+    width: 100%;
+}
+
+.history-anna{
+    color: white;
+    width: 50%;
+    height: auto;
+    background-color: #0e4675;
+    font-family: "PF Beau Sans Pro - Thin";
+}
+
+.history-anna h1{
+    font-size: 55px;
+    margin-left: 45px;
+}
+
+.em-red-color{
+    color: #d7262e;
+}
+
+.history-anna p{
+    font-size: 19px;
+    font-style: italic;
+    margin-left: 45px;
+}
+
+.history-anna a{
+    font-size: 15px;
+    color: #bbbaba;
+    text-decoration: none;
+    margin-left: 45px; 
+}
+
+.history-anna img{
+    margin-right: 10px;
+}
+
+.biography{
+    display: flex;
+}
+.biografi-h1{
+    background: linear-gradient(-28deg, #0E4672 58%, #D8262C 84%);
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-family: "PF Beau Sans Pro - Thin";
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 50px;
+    margin: 35px 0px 15px 25%;
+}
+
+.biography-b{
+    width: 17px;
+    height: 13px;
+    color: #be1e2d;
+    font-family: "PF Beau Sans Pro";
+    font-size: 48px;
+    font-style: italic;
+    line-height: 27px;
+    margin-left: 25%;
+}
+
+.biography-1{
+    width: 50%;
+    max-width: 100%;
+    height: auto; 
+}
+
+.biography-2{
+    width: 50%;
+    height: auto;
+}
+
+.biography1-p{
+    color: #58585a;
+    font-family: "PF Beau Sans Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 0 0 65px 25%;
+    word-break: break-all;
+}
+
+.p-quote{
+    width: 394px;
+    height: 84px;
+    color: #adadad;
+    font-family: "PF Beau Sans Pro - Thin Italic";
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 25%;
+}
+
+.biography-2-p{
+    width: 70%;
+    max-width: 100%;
+    font-family: "PF Beau Sans Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #58585a;
+    word-break: break-all;
+    margin: 0 0 0 5%;
+}
+.first{
+    margin: 35px 0 0 5%;
+}
+
+.biography-2-h3{
+    font-size: 19px;
+    color:   #49494b;
+    font-weight: 700;
+    line-height: 26px;
+    margin: 25px 0 10px 5%;
+}
+
+.b-time{
+    color: #0e4675;
+    font-weight: 700;
+    line-height: 33px;
+}
+
+.form{
+    background-image: url(./img/object.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.empty{
+    width: 50%;
+    height: 100%;
+}
+
+.filing-form{
+    width: 50%;
+}
+
+.form-h1{
+    background: linear-gradient(-4deg, #0e4675 38%, #D8262C 70%);
+    -webkit-background-clip: text; 
+    color: transparent;
+    margin: 100px 0px 35px 35px;
+}
+
+.form-p1{
+    width: 413px;
+    height: 49px;
+    color: #adadad;
+    font-family: "PF Beau Sans Pro - Thin Italic";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0 0 27px 35px
+}
+
+.form-input{
+    width: 488px;
+    height: 53px;
+    border: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    margin: 0px 0px 22px 35px;
+    padding-left: 25px; 
+}
+
+.select{
+    width: 516px;
+    height: 53px;
+    border: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    margin: 0px 0px 22px 35px;
+    padding-left: 25px; 
+}
+
+.form-span{
+    height: 15px;
+    color: #58585a;
+    font-family: "PF Beau Sans Pro";
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-left: 35px;
+    padding-right: 20px;
+}
+
+#data-time{
+    width: 293px;
+    height: 53px;
+    border: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    padding-left: 25px;
+
+}
+
+.form-button{
+    width: 176px;
+    height: 48px;
+    border-radius: 23px;
+    border: 1px solid #d8262e;
+    background-color: #d8262e;
+    color: white;
+    font-family: "PF Beau Sans Pro - Bbook";
+    font-size: 15px;
+    margin: 30px 0px 52px 190px;
+}
+.map{
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.map-position{
+    position: relative;
+    z-index: 2;
+    margin: -14% 0% 11% 48%;
+}
