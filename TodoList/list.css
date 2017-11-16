@@ -1,0 +1,126 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(66, 142, 230, 0.479); 
+}
+.conteiner {
+    width: auto;
+    height: auto;
+}
+
+.label {
+    margin-left: 145px;
+    padding: 20px;
+    font-size: 22px;
+    border-bottom: 4px;
+}
+
+#myInput {
+    margin: 10px 0 0 45px;
+    border-color: #4F9DEC; 
+    border: 0;
+    border-bottom: 2px;
+    padding: 10px 400px 10px 41px;
+}
+
+span {
+    background-color: #291297;
+    color: #FFFFFF;
+    margin-right: 5px;
+    border-radius: 4px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: #17912f;
+    color: white;
+}
+
+#myInput:hover{
+    border-color: blue;
+    
+}
+span:hover {
+    background-color: #C3C0C0;
+    color: #000000;
+}
+.container {
+    width: 400px;
+    left: 300px;
+    margin-top: 50px;
+}
+ul{
+    left: 100px;
+    text-decoration: none;
+}
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    border: 2px solid rgb(53, 40, 235);
+    margin: 3px;
+}
+
+li p {
+    color: rgb(167, 164, 164)
+}
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li:hover {
+    background: rgb(177, 191, 253);
+}
+
+ul li.checked {
+    background: rgba(38, 235, 38, 0.781);
+    color: rgb(255, 255, 255);
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    padding: 12px 16px 12px 16px;
+}
+
+.edit:hover {
+    background-color: #f5d313;
+    color: white;
+}
+
+#editeds{
+    width: 500px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border-color: yellow;
+}

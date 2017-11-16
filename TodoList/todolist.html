@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO List</title>
+        <meta charset="UTF-8">
+     <link href="list.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <span id="time"></span>
+        <div class="conteiner">
+            <div>
+            <label for="myInput" class="label">Добавити задачу</label><br>
+            <input id="myInput" type="text" placeholder="Текст задачі..." autofocus>
+            <span onclick="newElement()" class="addBtn" id="addBtn">Добавити</span>
+            <span onclick="reverse()" id="revers">↑↓ Reverse</span>
+            </div>
+        </div>
+        <ul id="myUL">
+        </ul>
+       
+        <script src="./tododo.js"></script>
+    </body>
+</html>
+
+

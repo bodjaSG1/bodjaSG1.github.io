@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .line{
@@ -17,7 +18,7 @@ body{
 }
 
 .header{
-    height: 144px;
+    height: auto;
     max-width: 100%;
     background-color: #ffffff;
     display: flex;
@@ -28,22 +29,22 @@ body{
 .header-logo{
     flex: 3;
     color: #58595b;
-    font-family: "PF Beau Sans Pro";
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 }
 .logo{
-    margin: 6% 0 0 11%
+    padding: 6% 0 0 11%
 }
 
 .header-text{
     margin-top:-3.5%;
-    margin-left: 9.5rem;
+    padding-left: 9rem;
 }
 
 .phone-number{
     flex: 3;
     color: #58595b;
-    font-family: "PF Beau Sans Pro";
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     align-self: center;
     display: flex;
@@ -51,22 +52,12 @@ body{
     justify-content: center;
 }
 
-.phone{
-    font-size: 24px;
-    padding-left: 18%;
-}
-
-.address{
-    padding-left: 20.5%;
-}
-
-
 .menu-header{
     flex: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 2rem;
+    padding-right: 35px;
 }
 
 
@@ -77,25 +68,32 @@ body{
     height: auto;
     justify-content: space-between;
     padding: 0;
-    margin-top: -3rem;
 }
 
 
 .menu-item-li-a{
-    font-family: "PF Beau Sans Pro";
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     font-weight: 700;
     line-height: 18.87px;
     color: #58595b;
-    font-family: "PF Beau Sans Pro";  
     text-decoration: none;
 }
 
-.eltment-top {
+.element-top {
     display: flex;
     justify-content: space-between;
-    margin: 4% 2% 0 0;
-    height: auto;
+    padding: 5% 7% 0 0;
+}
+.element-top1{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+.element-top2{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
 }
 
 
@@ -107,6 +105,7 @@ body{
     text-decoration: none;
     white-space: pre-line;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-self: center;
 }
@@ -115,19 +114,105 @@ body{
     margin-right: 5%;
 }
 
+.search{
+    margin: 0;
+}
 .language{
     font-family: "PF Beau Sans Pro";
     font-size: 14px;
     font-weight: 400;
     color: #a3a3a3;
-    font-family: "PF Beau Sans Pro";
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
     align-self: center;
+    margin: 0 8%;
 }
 
 .it{
-    background-color: #f3f3f3;
+    padding: 5px;
+    background-color: #949292;
     color: #d8262e;
+}
+
+@media screen and (max-width: 768px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    .menu-header{
+        display: flex;
+        flex-direction: column;
+    }
+    .element-top{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+    .element-top1{
+        width: 100%;
+    }
+    .menu-item{
+        flex-direction: column;
+        margin-top: 20px; 
+        justify-content: center;
+    }
+    .menu-item li{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .anna{
+        flex-direction: column;
+    }
+
+    .container{
+        display: table;
+    }
+
+    .biography{
+        flex-direction: column;
+        margin: 0;
+    }
+    .biography-1 .biography-2{
+        margin: 10px 10px 10px 10px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .emty{
+        display: none;
+    }
+
+    .div-map-position{
+        width: 100%;
+    }
+
+    .footer-menu{
+        display: none;
+    }
+
+    .menu{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+        z-index: 1;
+        height: auto;
+        margin: 0;
+    }
+    
+
 }
