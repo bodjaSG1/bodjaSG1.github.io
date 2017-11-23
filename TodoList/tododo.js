@@ -1,70 +1,64 @@
 var todoList = [];
 if (localStorage.getItem('todo') != undefined){
 	todoList = JSON.parse(localStorage.getItem('todo'));
-	for (let i = 0; i < todoList.length ; i++) {
-	var ule = document.getElementById("myUL");
-	var liu = document.createElement("LI");
-	var text_li = document.createTextNode(todoList[i].todo);
-	var text_data = document.createTextNode(todoList[i].data);
-	var checkL = todoList[i].check;
+	todoList.forEach((element, index) => createTodoItem(element, index));
+}	
+	
+function createTodoItem (item, index) {
+	var ul = document.getElementById("myUL");
+	var li = document.createElement("LI");
+	var text_li = document.createTextNode(item.todo);
+	var text_data = document.createTextNode(item.data);
+	var checkL = item.check;
 	var p = document.createElement("P");
 	var edit = document.createElement("SPAN");
 	var editText = document.createTextNode("Edit");
-	liu.appendChild(text_li);
+	var close = document.createElement("SPAN");
+	var textClose = document.createTextNode("X");
+	li.appendChild(text_li);
+	li.className = "draggable";
+	li.draggable="true";
 	p.appendChild(text_data);
 	edit.appendChild(editText);
 	edit.className = "edit";
-	liu.appendChild(edit);
-	liu.appendChild(p);
-	liu.id = [i];
-		if (checkL == true){
-			liu.className = "checked";
-		} 
-	 ule.appendChild(liu);
+	li.appendChild(edit);
+	li.appendChild(p);
+	close.className = "close";
+	close.appendChild(textClose);
+	li.appendChild(close);
+	li.id = index;
+	if (checkL == true){
+		li.className = "draggable checked";
 	}
-}	
+	ul.appendChild(li);
+	addEventsDragAndDrop(li);
+}
 
-function local() {
-	var d = document.getElementById ('myInput').value;
+function createLocalItem() {
+	var valueInput = document.getElementById ('myInput').value;
 	var temp = {};
 	var date = starttimer();
-	temp.todo = d;
-	temp.check = false;
-	temp.data = date;
 	var i = todoList.length;
 	todoList[i] = temp;
+	temp.todo = valueInput;
+	temp.check = false;
+	temp.data = date;
 	localStorage.setItem('todo', JSON.stringify(todoList))
 }
 
-deleteIcon();
-function deleteIcon(){
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-	for (i = 0; i < myNodelist.length; i++) {
-		var span = document.createElement("SPAN");
-		var txt = document.createTextNode("X");
 
-		span.className = "close";
-		span.appendChild(txt);
-		myNodelist[i].appendChild(span);
-	}
-}
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
+var close = document.querySelectorAll(".close");
+for (let i = 0; i < close.length; i++) {
 	close[i].onclick = function() {
-		var i = this.parentElement.id;
-		var div = this.parentElement;
-		div.parentNode.removeChild(div);
 		todoList.splice(i, 1);
 		localStorage.setItem('todo', JSON.stringify(todoList));
 		window.location.reload();
 	}
 }
 
-var ediT = document.getElementsByClassName("edit");
-for (i = 0; i < ediT.length; i++) {
+var ediT = document.querySelectorAll(".edit");
+for (let i = 0; i < ediT.length; i++) {
 	ediT[i].onclick = function() {
 		let i = this.parentElement.id;
 		let liId = document.getElementById(i);
@@ -80,7 +74,6 @@ for (i = 0; i < ediT.length; i++) {
 		} else{
 			let newValue = elementID.value;
 			todoList[i].todo = newValue; 
-			todoList[i].parse;
 			localStorage.setItem('todo', JSON.stringify(todoList));
 			window.location.reload();
 		}
@@ -92,64 +85,36 @@ var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
 	if (ev.target.tagName === 'LI') {
 		ev.target.classList.toggle('checked');
-		save();
+		saveDone();
 	}
 }, false);
 
-function save(){
-	let c = list.children.length;
-
-	for(i = 0; i < c; i++){
+function saveDone(){
+	let liCount = list.children.length;
+	for(i = 0; i < liCount; i++){
 		var element = document.getElementById(i);
 		var elClass = element.className; 
-		if (elClass  == "checked"){
-
+		if (elClass  == "draggable checked"){
 			todoList[i].check = true; 
-			todoList[i].parse;
-
 		} else {
-
 			todoList[i].check = false;
-			todoList[i].parse;
-
 		}
 	localStorage.setItem('todo', JSON.stringify(todoList))
 	}
 }
 
 function newElement() {
-	var li = document.createElement("LI");
 	var inputValue = document.getElementById("myInput").value;
-	var text = document.createTextNode(inputValue);
-	li.appendChild(text);
 		if (inputValue === '') {
 			alert("Поле не можить бути пустим!");
 		} else {
-			document.getElementById("myUL").appendChild(li);
-			local();
+			createLocalItem();
 		}
 	document.getElementById("myInput").value = "";
-
-	var span = document.createElement("SPAN");
-	var txt = document.createTextNode("X");
-	var p = document.createElement("P");
-	var edit = document.createElement("SPAN");
-	var editText = document.createTextNode("Edit");
-	span.className = "close";
-	edit.className = "edit";
-	p.className = "date";
-	span.appendChild(txt);
-	edit.appendChild(editText);
-	li.appendChild(p);
-	li.appendChild(span);
-	li.appendChild(edit);
-	
-
 	window.location.reload();
 }
 
 function reverse() {
-	todoList = JSON.parse(localStorage.getItem("todo"));
 	todoList.reverse();
 	localStorage.setItem('todo', JSON.stringify(todoList));
 	window.location.reload();
@@ -158,22 +123,22 @@ function reverse() {
 
 starttimer()
 function starttimer(){
-var h = new Date();	
-var curr_date = h.getDate();
-var curr_month = h.getMonth() + 1;
-var curr_year = h.getFullYear();
-hour=h.getHours();
-min=h.getMinutes();
-sec=h.getSeconds();
-tm=hour*60+min*60+sec;
-if(hour<10)
-hour='0'+hour;
-if(min<10)
-min='0'+min;
-if(sec<10)
-sec='0'+sec;
-document.getElementById('time').innerHTML = curr_year + "-" + curr_month + "-" + curr_date + "  " + hour + ':'+ min + ':' + sec;
-
-setTimeout("starttimer()",1000);
+	let newTime = new Date();	
+	let curr_date = newTime.getDate();
+	let curr_month = newTime.getMonth() + 1;
+	let curr_year = newTime.getFullYear();
+	hour = newTime.getHours();
+	min = newTime.getMinutes();
+	sec = newTime.getSeconds();
+	tm = hour * 60 + min * 60 + sec;
+	if(hour < 10)
+	hour = '0'+hour;
+	if(min < 10)
+	min = '0' + min;
+	if(sec < 10)
+	sec = '0' + sec;
+	document.getElementById('time').innerHTML = curr_year + "-" + curr_month + "-" + curr_date + "  " + hour + ':'+ min + ':' + sec;
+	setTimeout("starttimer()",1000);
 	return curr_year + "-" + curr_month + "-" + curr_date + " " + hour + ':'+ min + ':' + sec;
 };
+

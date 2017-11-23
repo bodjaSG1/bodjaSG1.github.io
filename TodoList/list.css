@@ -16,11 +16,12 @@ body{
 }
 
 #myInput {
+    background-color: #e4dcdc;
     margin: 10px 0 0 45px;
-    border-color: #4F9DEC; 
-    border: 0;
+    border-color: rgb(23, 130, 236); 
     border-bottom: 2px;
-    padding: 10px 400px 10px 41px;
+    padding: 10px 400px 10px 20px;
+    
 }
 
 span {
@@ -38,17 +39,12 @@ span {
 }
 
 #myInput:hover{
-    border-color: blue;
+    border-color: rgb(255, 255, 255);
     
 }
 span:hover {
     background-color: #C3C0C0;
     color: #000000;
-}
-.container {
-    width: 400px;
-    left: 300px;
-    margin-top: 50px;
 }
 ul{
     left: 100px;
@@ -63,13 +59,16 @@ ul li {
     transition: 0.2s;
     border: 2px solid rgb(53, 40, 235);
     margin: 3px;
+    list-style-type: none;
 }
 
 li p {
-    color: rgb(167, 164, 164)
+    color: rgb(146, 143, 143);
+    width: 155px;
 }
+
 ul li:nth-child(odd) {
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 ul li:hover {
@@ -77,10 +76,15 @@ ul li:hover {
 }
 
 ul li.checked {
-    background: rgba(38, 235, 38, 0.781);
+    background: #179127;
     color: rgb(255, 255, 255);
     text-decoration: line-through;
 }
+
+li.checked p{
+    color: white;
+}
+
 ul li.checked::before {
     content: '';
     position: absolute;
@@ -114,13 +118,15 @@ ul li.checked::before {
 }
 
 .edit:hover {
-    background-color: #f5d313;
+    background-color: #f3d646;
     color: white;
 }
 
 #editeds{
-    width: 500px;
-    padding-left: 10px;
-    border-radius: 10px;
-    border-color: yellow;
+    width: 80%;
+    background-color: #e4dcdc;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: rgb(38, 0, 255);
 }
